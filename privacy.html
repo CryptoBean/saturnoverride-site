@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy | Saturn Override</title>
+<style>body{font-family:system-ui,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1rem;line-height:1.5;color:#222}</style>
+</head>
+<body>
+<h1>Privacy Policy</h1>
+<p>Effective date: 2 October 2026</p>
+
+<p>This policy covers two private Google OAuth applications operated by the owner of Saturn Override: <strong>TAO Ops ChatGPT Bridge</strong> and <strong>Shadow Advisor Host</strong>. Neither application is offered to the public. Each is authorized only with the owner's own Google account and accesses only that account's data.</p>
+
+<h2>TAO Ops ChatGPT Bridge</h2>
+<ul>
+<li><strong>Scope requested:</strong> <code>https://www.googleapis.com/auth/drive.file</code> only. The application refuses to run with a token that grants any broader or additional scope.</li>
+<li><strong>Data accessed:</strong> one Google Sheet that the application created itself. The ID of that sheet is fixed in the application's configuration, and any other sheet is refused. Under the <code>drive.file</code> scope, Google does not give the application access to the owner's other files.</li>
+<li><strong>What it does:</strong> it reads command rows from the sheet, checks them, and records accepted commands in the owner's private operations ledger. It then appends receipt and status rows to the same sheet. It does not edit or delete the command rows.</li>
+</ul>
+
+<h2>Shadow Advisor Host</h2>
+<ul>
+<li><strong>Scope requested:</strong> <code>https://www.googleapis.com/auth/drive</code>. This scope is needed because the files it must read and update in that folder were created by other tools.</li>
+<li><strong>Data accessed:</strong> one Google Drive folder owned by the owner, used for daily research handoffs. During one-time setup, the application reads the signed-in account's email address to confirm it is the owner's account, and searches Drive by name to find that folder.</li>
+<li><strong>What it does:</strong> it uploads daily research files into the folder and reads them back to verify them. It updates a pointer file in the folder, reads files in the folder's return area into a local copy, and moves its own temporary folders to the Drive trash. It is designed to work only inside that folder.</li>
+</ul>
+
+<h2>Where data and credentials are kept</h2>
+<p>Both applications run only on a private server used for the owner's own automation. Data they read from Google is stored on that server. Bridge commands go into the operations ledger, and Shadow Advisor return files go into a local copy. The owner's own automated assistants on that server may process this data, solely to carry out the owner's tasks.</p>
+<p>Each application's OAuth token is stored on that server in its own separate file, readable only by the server account that runs the applications. Tokens are not shared between the two applications and are not published or shared with anyone.</p>
+
+<h2>Sharing and use</h2>
+<p>Google user data obtained through these applications is not sold. It is not used for advertising, and it is not shared with or transferred to any third party for their own use.</p>
+<p>Other tools the owner uses, such as ChatGPT's own Google connection, may also read or write the same sheet or folder under their own separate authorizations. This policy does not cover those tools.</p>
+
+<h2>Retention and revocation</h2>
+<p>The owner controls how long this data is kept and can delete it at any time. Access for either application can be revoked at any time at <a href="https://myaccount.google.com/permissions">https://myaccount.google.com/permissions</a>. After access is revoked, the application can no longer reach Google data.</p>
+
+<h2>Contact</h2>
+<p><a href="mailto:nhatinator@gmail.com">nhatinator@gmail.com</a></p>
+</body>
+</html>
